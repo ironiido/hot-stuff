@@ -71,7 +71,6 @@
             android:id="@+id/create_location_container"
             style="@style/text_input_layout"
             app:helperTextTextColor="?attr/colorAccent">
-
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/create_location_text"
                 style="@style/text_input_field"
