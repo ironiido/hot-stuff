@@ -274,4 +274,5 @@
     <string name="filler_label_short">Lorem</string>
     <string name="filler_label_medium">Lorem ipsum dolor</string>
     <string name="filler_label_long">Lorem ipsum dolor sit amet</string>
+    <string name="label_location">Location</string>
 </resources>
