@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
+    android:scrollbars="none"
+    android:paddingBottom="?attr/actionBarSize">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="16dp"
+        tools:context=".ui.home.HomeFragment">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/label_building_value"
+                    style="@style/text_subtitle"
+                    android:text="@string/label_building_value"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/label_value_total"
+                    style="@style/text_subtitle"
+                    android:text="@string/label_building_value_placeholder"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/label_building_name"
+                    style="@style/text_subtitle"
+                    android:text="@string/label_building_name_placeholder"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_building_value" />
+
+                <TextView
+                    android:id="@+id/label_building_quantity"
+                    style="@style/text_subtitle"
+                    android:text="@string/label_building_quantity_placeholder"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_building_value" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="0dp">
+            <TextView
+                android:id="@+id/label_category_summary"
+                style="@style/text_subtitle"
+                android:layout_marginHorizontal="0dp"
+                android:text="@string/label_category_summary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/button_home_category"
+                style="@style/text_subtitle"
+                android:layout_marginHorizontal="0dp"
+                android:text="@string/label_item_quantity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/chart_home_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="200dp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="0dp">
+            <TextView
+                android:id="@+id/label_room_summary"
+                style="@style/text_subtitle"
+                android:text="@string/label_room_summary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/button_home_room"
+                style="@style/text_subtitle"
+                android:text="@string/label_item_value"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.github.mikephil.charting.charts.HorizontalBarChart
+                android:id="@+id/chart_home_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="200dp"/>
+    </LinearLayout>
+</ScrollView>

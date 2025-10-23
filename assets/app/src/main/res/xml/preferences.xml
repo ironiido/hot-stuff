@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/label_appearance" app:iconSpaceReserved="false">
+        <ListPreference
+            android:title="@string/label_theme"
+            android:dialogTitle="@string/label_theme"
+            android:entries="@array/dropdown_theme"
+            android:entryValues="@array/theme_values"
+            android:key="@string/key_theme"
+            android:summary="@string/label_theme_summary"
+            app:iconSpaceReserved="false"/>
+        <ListPreference
+            android:title="@string/label_currency"
+            android:dialogTitle="@string/label_currency"
+            android:entries="@array/currency_labels"
+            android:entryValues="@array/currency_values"
+            android:key="@string/key_currency"
+            android:summary="@string/label_currency_summary"
+            app:iconSpaceReserved="false"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/label_building_info" app:iconSpaceReserved="false">
+        <EditTextPreference
+            android:title="@string/label_building_name_title"
+            android:dialogTitle="@string/dialog_settings_building_name"
+            android:key="@string/key_buildingName"
+            android:summary="@string/label_building_name_summary"
+            app:iconSpaceReserved="false"/>
+        <ListPreference
+            android:title="@string/label_building_type_title"
+            android:dialogTitle="@string/dialog_settings_building_type"
+            android:entries="@array/building_type"
+            android:entryValues="@array/building_type_values"
+            android:key="@string/key_buildingType"
+            android:summary="@string/label_building_type_summary"
+            app:iconSpaceReserved="false"/>
+        <EditTextPreference
+            android:title="@string/label_building_desc_title"
+            android:dialogTitle="@string/dialog_settings_building_desc"
+            android:key="@string/key_buildingDesc"
+            android:summary="@string/label_building_desc_summary"
+            app:iconSpaceReserved="false"/>
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/label_contact" app:iconSpaceReserved="false">
+<!--        <Preference-->
+<!--            android:title="@string/label_rate"-->
+<!--            android:summary="@string/label_rate_summary"-->
+<!--            android:key="@string/key_rate"-->
+<!--            app:iconSpaceReserved="false" />-->
+        <Preference
+            android:title="@string/label_report"
+            android:summary="@string/label_report_summary"
+            android:key="@string/key_report"
+            app:iconSpaceReserved="false" />
+        <Preference
+            android:title="@string/label_feedback"
+            android:summary="@string/label_feedback_summary"
+            android:key="@string/key_feedback"
+            app:iconSpaceReserved="false" />
+        <Preference
+            android:title="@string/label_email"
+            android:summary="@string/label_email_summary"
+            android:key="@string/key_email"
+            app:iconSpaceReserved="false"/>
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/label_app_info" app:iconSpaceReserved="false">
+        <Preference
+            android:title="@string/label_share"
+            android:summary="@string/label_share_summary"
+            android:key="@string/key_share"
+            app:iconSpaceReserved="false" />
+        <Preference
+            android:title="@string/label_source_code"
+            android:summary="@string/label_source_code_summary"
+            android:key="@string/key_source_code"
+            app:iconSpaceReserved="false"/>
+        <Preference
+            android:title="@string/label_terms"
+            android:summary="@string/label_terms_summary"
+            android:key="@string/key_terms"
+            app:iconSpaceReserved="false" />
+        <Preference
+            android:title="@string/label_privacy"
+            android:summary="@string/label_privacy_summary"
+            android:key="@string/key_privacy"
+            app:iconSpaceReserved="false" />
+        <Preference
+            android:title="@string/label_open_source"
+            android:summary="@string/label_open_source_summary"
+            android:key="@string/key_open_source"
+            app:iconSpaceReserved="false"/>
+        <Preference
+            android:title="@string/label_version_number"
+            android:key="@string/key_version"
+            app:iconSpaceReserved="false"/>
+    </PreferenceCategory>
+</PreferenceScreen>

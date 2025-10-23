@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/navigation_home">
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.hotstuff.ui.home.HomeFragment"
+        android:label="@string/label_home_fragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_onboard"
+            app:destination="@id/navigation_onboard"/>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_items"
+        android:name="com.hotstuff.ui.items.ItemsFragment"
+        android:label="@string/label_items_fragment"
+        tools:layout="@layout/fragment_items">
+        <action
+            android:id="@+id/action_items_to_item_detail"
+            app:destination="@id/navigation_item_detail"/>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_create_item"
+        android:name="com.hotstuff.ui.create.CreateItemFragment"
+        android:label="Create"
+        tools:layout="@layout/fragment_create_item"/>
+    <fragment
+        android:id="@+id/navigation_learn"
+        android:name="com.hotstuff.ui.learn.LearnFragment"
+        android:label="@string/label_learn_fragment"
+        tools:layout="@layout/fragment_learn">
+        <action
+            android:id="@+id/action_learn_to_article"
+            app:destination="@+id/navigation_article"/>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.hotstuff.ui.settings.SettingsContainerFragment"
+        android:label="@string/label_settings_fragment"
+        tools:layout="@layout/fragment_settings_container"/>
+    <fragment
+        android:id="@+id/navigation_item_detail"
+        android:name="com.hotstuff.ui.items.ItemDetailFragment"
+        android:label="Item details"
+        tools:layout="@layout/fragment_item_detail">
+        <action
+            android:id="@+id/action_item_detail_to_edit_item"
+            app:destination="@id/navigation_edit_item" />
+        <action
+            android:id="@+id/action_item_detail_to_items"
+            app:popUpTo="@id/navigation_items"
+            app:popUpToInclusive="true"
+            app:destination="@id/navigation_items" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_edit_item"
+        android:name="com.hotstuff.ui.items.EditItemFragment"
+        android:label="Edit item"
+        tools:layout="@layout/fragment_edit_item">
+        <action
+            android:id="@+id/action_edit_item_to_item_detail"
+            app:popUpTo="@id/navigation_item_detail"
+            app:popUpToInclusive="true"
+            app:destination="@id/navigation_item_detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_article"
+        android:name="com.hotstuff.ui.learn.ArticleFragment"
+        android:label=""
+        tools:layout="@layout/fragment_article">
+        <action
+            android:id="@+id/action_article_to_learn"
+            app:popUpTo="@id/navigation_learn"
+            app:popUpToInclusive="true"
+            app:destination="@+id/navigation_learn"/>
+    </fragment>
+</navigation>
