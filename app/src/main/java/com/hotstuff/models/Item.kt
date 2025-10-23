@@ -7,7 +7,6 @@ data class Item (
     var quantity : Int = 1,
     var category : String? = null,
     var room : String? = null,
-    var location : String? = null,
     var make : String? = null,
     var value : Double? = null,
     var imageUri : String? = null,

@@ -47,8 +47,6 @@ class CreateItemFragment: Fragment() {
         val categoryContainer = view.findViewById<TextInputLayout>(R.id.create_category_container)
         val roomText = view.findViewById<MaterialAutoCompleteTextView>(R.id.create_room_text)
         val roomContainer = view.findViewById<TextInputLayout>(R.id.create_room_container)
-        val locationText = view.findViewById<MaterialAutoCompleteTextView>(R.id.create_location_text)
-        val locationContainer = view.findViewById<MaterialAutoCompleteTextView>(R.id.create_location_container)
         val valueText = view.findViewById<TextInputEditText>(R.id.create_value_text)
         val makeText = view.findViewById<TextInputEditText>(R.id.create_make_text)
         val descriptionText = view.findViewById<TextInputEditText>(R.id.create_description_text)
@@ -114,23 +112,16 @@ class CreateItemFragment: Fragment() {
         }
         takePhotoButton?.setOnClickListener {
             try {
-                val requestedPermission = CAMERA_PERMISSION
-                val checkSelfPermission = ContextCompat.checkSelfPermission(requireActivity(), requestedPermission)
-                if (checkSelfPermission == PackageManager.PERMISSION_GRANTED) {
-                    val imageAlbum = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "Hot Stuff")
-                    if (!imageAlbum.exists()) imageAlbum.mkdirs()
-                    imageFile = File(imageAlbum, "HS-${System.currentTimeMillis()}.jpg")
-                    if (imageFile!!.createNewFile()) {
-                        uri = FileProvider.getUriForFile(requireContext(), "${requireContext().packageName}.provider", imageFile!!)
-                        takePicture.launch(uri)
-                    }
-                } else if (checkSelfPermission == PackageManager.PERMISSION_DENIED) {
-                    ActivityCompat.requestPermissions(requireActivity(), arrayOf(requestedPermission), CAMERA_REQUEST_CODE)
-                    Toast.makeText(context, getText(R.string.toast_need_camera_permission), Toast.LENGTH_LONG).show()
+                val imageAlbum = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "Hot Stuff")
+                if (!imageAlbum.exists()) imageAlbum.mkdirs()
+                imageFile = File(imageAlbum, "HS-${System.currentTimeMillis()}.jpg")
+                if (imageFile!!.createNewFile()) {
+                    uri = FileProvider.getUriForFile(requireContext(), "${requireContext().packageName}.provider", imageFile!!)
+                    takePicture.launch(uri)
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
-                Toast.makeText(context, "Error: $e", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -144,7 +135,7 @@ class CreateItemFragment: Fragment() {
                     createImage.setImageURI(uri)
                 } catch (e: Exception) {
                     e.printStackTrace()
-                    Toast.makeText(context, "Error: $e", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -156,10 +147,12 @@ class CreateItemFragment: Fragment() {
                     selectPicture.launch(arrayOf(SELECT_INPUT_TYPE))
                 } catch (e: Exception) {
                     e.printStackTrace()
-                    Toast.makeText(context, "Error: $e", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
                 }
             } else if (checkSelfPermission == PackageManager.PERMISSION_DENIED) {
-                ActivityCompat.requestPermissions(requireActivity(), arrayOf(requestedPermission), ACCESS_REQUEST_CODE)
+                ActivityCompat.requestPermissions(requireActivity(), arrayOf(requestedPermission),
+                    PERMISSION_REQUEST_CODE
+                )
                 Toast.makeText(context, getText(R.string.toast_need_photo_permission), Toast.LENGTH_LONG).show()
             }
         }
@@ -172,7 +165,6 @@ class CreateItemFragment: Fragment() {
                 newItem.quantity = quantityText.text.toString().toInt()
                 newItem.category = categoryText.text.toString().trim()
                 newItem.room = roomText.text.toString().trim()
-                newItem.location = locationText.text.toString().trim()
                 newItem.make = makeText.text?.toString()?.trim()
                 newItem.value = valueText.text?.toString()?.toDoubleOrNull()
                 newItem.imageUri = if (uri != null) uri.toString() else null
@@ -183,7 +175,6 @@ class CreateItemFragment: Fragment() {
                 quantityText.text = null
                 categoryText.text = null
                 roomText.text = null
-                locationText.text = null
                 valueText.text = null
                 makeText.text = null
                 createImage.setImageResource(R.drawable.image_default_item)
@@ -231,10 +222,8 @@ class CreateItemFragment: Fragment() {
         _binding = null
     }
     companion object {
-        const val ACCESS_REQUEST_CODE = 10
-        const val CAMERA_REQUEST_CODE = 20
+        const val PERMISSION_REQUEST_CODE = 10
         const val ACCESS_PERMISSION = android.Manifest.permission.READ_MEDIA_IMAGES
-        const val CAMERA_PERMISSION = android.Manifest.permission.CAMERA
         const val SELECT_INPUT_TYPE = "image/*"
         const val SELECT_MIME_TYPE = "image/jpg"
     }

@@ -15,19 +15,19 @@ class AdapterTest {
         items = ArrayList()
         items.add(
             com.hotstuff.models.Item(
-                1, 1, "TV", 1, "Electronics", "Living Room", "Nowhere",
+                1, 1, "TV", 1, "Electronics", "Living Room",
                 "Brand A", 0.00, null, null
             )
         )
         items.add(
             com.hotstuff.models.Item(
-                2, 1, "Stool", 2, "Furniture", "Kitchen", "Nowhere",
+                2, 1, "Stool", 2, "Furniture", "Kitchen",
                 "Brand B", 0.00, null, null
             )
         )
         items.add(
             com.hotstuff.models.Item(
-                3, 1, "Couch", 2, "Furniture", "Living Room", "Nowhere",
+                3, 1, "Couch", 2, "Furniture", "Living Room",
                 "Brand C", 0.00, null, null
             )
         )
@@ -46,7 +46,7 @@ class AdapterTest {
         assertEquals(3, items.size)
         val updatedItems = items
         val newItem = com.hotstuff.models.Item(
-            4, 1, "Couch", 2, "Furniture", "Nowhere",
+            4, 1, "Couch", 2, "Furniture",
             "Living Room", "Brand C", 0.00, null, null
         )
         updatedItems.add(newItem)
