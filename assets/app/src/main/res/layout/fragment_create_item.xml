@@ -68,7 +68,7 @@
                 android:hint="@string/label_room"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/create_locations_container"
+            android:id="@+id/create_location_container"
             style="@style/text_input_layout"
             app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.MaterialAutoCompleteTextView

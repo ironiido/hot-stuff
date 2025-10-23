@@ -47,6 +47,8 @@ class CreateItemFragment: Fragment() {
         val categoryContainer = view.findViewById<TextInputLayout>(R.id.create_category_container)
         val roomText = view.findViewById<MaterialAutoCompleteTextView>(R.id.create_room_text)
         val roomContainer = view.findViewById<TextInputLayout>(R.id.create_room_container)
+        val locationText = view.findViewById<MaterialAutoCompleteTextView>(R.id.create_location_text)
+        val locationContainer = view.findViewById<MaterialAutoCompleteTextView>(R.id.create_location_container)
         val valueText = view.findViewById<TextInputEditText>(R.id.create_value_text)
         val makeText = view.findViewById<TextInputEditText>(R.id.create_make_text)
         val descriptionText = view.findViewById<TextInputEditText>(R.id.create_description_text)

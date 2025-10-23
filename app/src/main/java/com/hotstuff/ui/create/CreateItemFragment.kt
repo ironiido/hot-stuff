@@ -47,6 +47,8 @@ class CreateItemFragment: Fragment() {
         val categoryContainer = view.findViewById<TextInputLayout>(R.id.create_category_container)
         val roomText = view.findViewById<MaterialAutoCompleteTextView>(R.id.create_room_text)
         val roomContainer = view.findViewById<TextInputLayout>(R.id.create_room_container)
+        val locationText = view.findViewById<MaterialAutoCompleteTextView>(R.id.create_location_text)
+        val locationContainer = view.findViewById<MaterialAutoCompleteTextView>(R.id.create_location_container)
         val valueText = view.findViewById<TextInputEditText>(R.id.create_value_text)
         val makeText = view.findViewById<TextInputEditText>(R.id.create_make_text)
         val descriptionText = view.findViewById<TextInputEditText>(R.id.create_description_text)
@@ -170,6 +172,7 @@ class CreateItemFragment: Fragment() {
                 newItem.quantity = quantityText.text.toString().toInt()
                 newItem.category = categoryText.text.toString().trim()
                 newItem.room = roomText.text.toString().trim()
+                newItem.location = locationText.text.toString().trim()
                 newItem.make = makeText.text?.toString()?.trim()
                 newItem.value = valueText.text?.toString()?.toDoubleOrNull()
                 newItem.imageUri = if (uri != null) uri.toString() else null
@@ -180,6 +183,7 @@ class CreateItemFragment: Fragment() {
                 quantityText.text = null
                 categoryText.text = null
                 roomText.text = null
+                locationText.text = null
                 valueText.text = null
                 makeText.text = null
                 createImage.setImageResource(R.drawable.image_default_item)

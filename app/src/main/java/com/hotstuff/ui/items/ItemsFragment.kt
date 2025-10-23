@@ -76,6 +76,7 @@ class ItemsFragment : Fragment() {
                 bundle.putString("name", items[position].name)
                 bundle.putString("category", items[position].category)
                 bundle.putString("room", items[position].room)
+                bundle.putString("location", items[position].location)
                 bundle.putString("make", items[position].make)
                 bundle.putString("description", items[position].description)
                 bundle.putString("image", items[position].imageUri)

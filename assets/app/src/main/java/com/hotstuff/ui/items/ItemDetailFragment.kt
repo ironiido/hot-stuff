@@ -29,6 +29,7 @@ class ItemDetailFragment : Fragment() {
         val name = view.findViewById<TextView>(R.id.item_detail_name_text)
         val category = view.findViewById<TextView>(R.id.item_detail_category_text)
         val room = view.findViewById<TextView>(R.id.item_detail_room_text)
+        val location = view.findViewById<TextView>(R.id.item_detail_location_text)
         val description = view.findViewById<TextView>(R.id.item_detail_description_text)
         val make = view.findViewById<TextView>(R.id.item_detail_make_text)
         val value = view.findViewById<TextView>(R.id.item_detail_value_text)

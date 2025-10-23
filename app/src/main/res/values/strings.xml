@@ -38,6 +38,7 @@
     <string name="label_quantity">Quantity</string>
     <string name="label_category">Category</string>
     <string name="label_room">Room</string>
+    <string name="label_location">Location</string>
     <string name="label_make">Brand / Manufacturer</string>
     <string name="label_value">Value (per item)</string>
     <string name="label_description">Description</string>

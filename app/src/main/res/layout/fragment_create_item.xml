@@ -61,11 +61,25 @@
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/create_room_text"
                 style="@style/text_input_field"
+                android:hint="@string/label_room"
                 android:inputType="textAutoCorrect"
                 android:paddingHorizontal="16dp"
                 android:textSize="16sp"
-                app:simpleItems="@array/autocomplete_rooms"
-                android:hint="@string/label_room"/>
+                app:simpleItems="@array/autocomplete_rooms" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/create_location_container"
+            style="@style/text_input_layout"
+            app:helperTextTextColor="?attr/colorAccent">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/create_location_text"
+                style="@style/text_input_field"
+                android:hint="@string/label_location"
+                android:inputType="textAutoCorrect"
+                android:paddingHorizontal="16dp"
+                android:textSize="16sp"
+                app:simpleItems="@array/autocomplete_locations"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/create_make_container"
